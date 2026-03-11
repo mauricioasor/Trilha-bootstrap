@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <!-- CDN font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bibilioteca icones -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <title>Aprendendo Bootstrap 4.6 no UNISENAI</title>
+</head>
+
+<body>
+  <!-- Nav bar com bootstrap -->
+  <section class="p-2">
+    <!-- Este trecho cria o tamanho e cor da nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <!-- Este trecho define o titulo da barra com link e também adiciona um ícone  -->
+      <a class="navbar-brand text-dark" href="#"><i class="bi bi-emoji-dizzy mr-2"></i>Início</a>
+      <!-- Estre trecho cria o botão recolhivelL -->
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <!-- Adicionando itens com hiper link -->
+            <a class="nav-link text-dark" href="#">Produtos<span class="sr-only">(current)</span></a>
+          </li>
+          <!-- Este trecho cria um uma lista drop ou suspensa com ícone de seta para baixo -->
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mais</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action 1</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Action 2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Action 2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Action 3</a>
+            </div>
+          </li>
+          <!-- Cria um botão desativado (disable) -->
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apenas visual</a>
+          </li>
+        </ul>
+        <!-- Estre trecho cria um formulario de pesquisa -->
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="pesquise algo" aria-label="Search" />
+          <!-- Cria um botão sem preenchimento -->
+          <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+            Pesquisar
+          </button>
+        </form>
+      </div>
+    </nav>
+  </section>
+  <!-- Inicio das atividades -->
+  <section class="p2">
+    <div class="p-2">
+      <h1 class="bg-success pt-2 text-center">Olá, me chamo Maurício!</h1>
+      <h2 class="bg-warning pt-2 text-center">Sou aluno ADS unisenai!!</h2>
+      <h3 class="text-info text-center">Estou no segundo ano letivo!!!</h3>
+    </div>
+    </div>
+  </section>
+  <!-- Tipos de container -->
+  <section class="p-2">
+    <!-- Este container do tipo container esse define uma largura máxima e centraliza horizontalmente -->
+    <div class="container bg-success text-center">
+      <h1>Classe container</h1>
+      <p>Este container do tipo container esse define uma largura máxima e centraliza horizontalmente
+      </p>
+    </div>
+    <!-- Este container-fluid ocupa toda a largura dispoível -->
+    <div class="container-fluid bg-info text-center">
+      <h1>Classe container-fluid</h1>
+      <p>Este container-fluid ocupa toda a largura dispoível
+      </p>
+    </div>
+    <!-- Este container-breakpoint Define a largura máxima até o ponto de interrupção especificado (por exemplo, .container-sm para telas pequenas).-->
+    <div class="container-sm bg-warning text-center">
+      <h1>Classe container-breakpoint</h1>
+      <p> O container-sm ocupa 100% da largura da tela em dispositivos menores que 576px. A partir de 576px ele passa a
+        ter uma largura fixa centralizada na página.
+      </p>
+    </div>
+  </section>
+  <!-- Classees para Inserir imagens -->
+  <section class="p-2">
+    <div class="container p-2">
+      <!-- classe img-fluid para deixar responsivo-->
+      <h2>Imagem respônsiva</h2>
+      <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="img-fluid" alt="Imagem respônsiva"
+        width="200" height="200">
+    </div>
+    <!-- classe mx-auto d-block para deixar centralizada-->
+    <div class="container p-2">
+      <h2 class="text-center">imagem centralizada</h2>
+      <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="mx-auto d-block"
+        alt="Imagem centralizada" width="200" height="200">
+    </div>
+    <!-- classe rounded-circle para deixar borda arredondada-->
+    <div class="container p-2">
+      <h2>imagem com bordas</h2>
+      <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="rounded" alt="rounded" width="200"
+        height="200">
+    </div>
+    <!-- classe rounded-circle circular-->
+    <div class="container p-2">
+      <h2>imagem com circulo</h2>
+      <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="rounded-circle" alt="rounded-circle"
+        width="200" height="200">
+    </div>
+    <!-- classe float-left ou float-right-->
+    <div class="container p-2 clearfix">
+      <h2>Imagens alinhadas</h2>
+      <div class="p-2">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="float-left" alt="rounded-circle"
+          width="200" height="200">
+      </div>
+      <div class="p-2">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="float-right" alt="rounded-circle"
+          width="200" height="200">
+      </div>
+    </div>
+    <!-- classe thumbnail -->
+    <div class="container p-2">
+      <h2>imagem thumbnail</h2>
+      <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" class="img-thumbnail" alt="rounded-circle"
+        width="200" height="200">
+    </div>
+  </section>
+  <!-- Classe jumbotron -->
+  <section class="p-2">
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Classe jumbotron</h1>
+        <p>Um jumbotron indica uma grande caixa cinza para chamar atenção extra
+          para algum conteúdo ou informação especial.
+          Dica: Dentro de um jumbotron você pode colocar praticamente qualquer
+          HTML válido, incluindo outros elementos/classes do Bootstrap.
+        </p>
+      </div>
+      <p>Outros textos.</p>
+    </div>
+  </section>
+  <!-- Classes de alertas -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Alertas</h2>
+      <p>Os alertas são criados com a classe .alert, seguida por classes de cores contextuais:</p>
+
+      <div class="alert alert-success">
+        <strong>Sucesso!</strong> Esta caixa de alerta pode indicar uma ação bem-sucedida ou positiva.
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Informação!</strong> Esta caixa de alerta pode indicar uma informação ou mudança neutra.
+      </div>
+
+      <div class="alert alert-warning">
+        <strong>Atenção!</strong> Esta caixa de alerta pode indicar um aviso que precisa de atenção.
+      </div>
+
+      <div class="alert alert-danger">
+        <strong>Perigo!</strong> Esta caixa de alerta pode indicar uma ação perigosa ou potencialmente negativa.
+      </div>
+
+      <div class="alert alert-primary">
+        <strong>Principal!</strong> Indica uma ação importante.
+      </div>
+
+      <div class="alert alert-secondary">
+        <strong>Secundário!</strong> Indica uma ação um pouco menos importante.
+      </div>
+
+      <div class="alert alert-dark">
+        <strong>Escuro!</strong> Alerta em cinza escuro.
+      </div>
+
+      <div class="alert alert-light">
+        <strong>Claro!</strong> Alerta em cinza claro.
+      </div>
+
+    </div>
+  </section>
+  <!-- Classe para grupo de botões -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Grupo de Botões</h2>
+      <p>A classe .btn-group cria um grupo de botões:</p>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Apple</button>
+        <button type="button" class="btn btn-success">Samsung</button>
+        <button type="button" class="btn btn-warning">Sony</button>
+      </div>
+    </div>
+  </section>
+  <!-- Classe badges (etiquetas) -->
+  <section class="p-2">
+    <div class="container p-2">
+      <h2>Etiquetas (Badges)</h2>
+      <h1>Exemplo de título <span class="badge badge-secondary">Novo</span></h1>
+      <h2>Exemplo de título <span class="badge badge-success">Novo</span></h2>
+      <h3>Exemplo de título <span class="badge badge-warning">Novo</span></h3>
+      <h4>Exemplo de título <span class="badge badge-dark">Novo</span></h4>
+      <h5>Exemplo de título <span class="badge badge-danger">Novo</span></h5>
+      <h6>Exemplo de título <span class="badge badge-info">Novo</span></h6>
+    </div>
+  </section>
+  <!-- Classe contextual badges (eitquetas coloridas) -->
+  <search class="p-2">
+    <div class="container">
+      <h2>Etiquetas Contextuais</h2>
+      <span class="badge badge-primary">Principal</span>
+      <span class="badge badge-secondary">Secundário</span>
+      <span class="badge badge-success">Sucesso</span>
+      <span class="badge badge-danger">Perigo</span>
+      <span class="badge badge-warning">Atenção</span>
+      <span class="badge badge-info">Informação</span>
+      <span class="badge badge-light">Claro</span>
+      <span class="badge badge-dark">Escuro</span>
+    </div>
+  </search>
+  <!-- Classe Colored Spinners (circulo carrgando) -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Spinners Coloridos</h2>
+      <p>Use qualquer <strong>utilitário de cor de texto</strong> para adicionar uma cor ao spinner:</p>
+      <div class="spinner-border text-muted"></div>
+      <div class="spinner-border text-primary"></div>
+      <div class="spinner-border text-success"></div>
+      <div class="spinner-border text-info"></div>
+      <div class="spinner-border text-warning"></div>
+      <div class="spinner-border text-danger"></div>
+      <div class="spinner-border text-secondary"></div>
+      <div class="spinner-border text-dark"></div>
+      <div class="spinner-border text-light"></div>
+    </div>
+  </section>
+  <!-- Nav bar basica -->
+  <section class="p-2">
+    <nav class="navbar navbar-expand-sm bg-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </nav>
+    <br>
+    <div class="container-fluid">
+      <h3>Exemplo Básico de Navbar</h3>
+      <p>Uma barra de navegação é um cabeçalho de navegação que fica localizado no topo da página.</p>
+      <p>A classe navbar-expand-xl|lg|md|sm determina quando a barra de navegação deve se reorganizar verticalmente (em
+        telas extra grandes, grandes, médias ou pequenas).</p>
+    </div>
+  </section>
+  <!-- Layouts de formulário Bootstrap 4 -->
+  <section class="p-2">
+    <!-- Formulário empilhado (campos um abaixo do outro) -->
+    <div class="container">
+      <h2>Formulário Empilhado</h2>
+      <form action="/action_page.php">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Digite o email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Senha:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Digite a senha" name="pswd">
+        </div>
+        <div class="form-group form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" name="remember"> Lembrar de mim
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+    <!-- Formulário inline (campos alinhados na mesma linha em telas maiores) -->
+    <div class="container">
+      <h2>Formulário Inline</h2>
+      <p>Torne a janela do navegador maior que 576px para ver que todos os elementos do formulário ficam alinhados na
+        mesma linha e à esquerda. Em telas pequenas, os grupos do formulário ficam empilhados.</p>
+      <form class="form-inline" action="/action_page.php">
+        <label for="email2" class="mb-2 mr-sm-2">Email:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Digite o email" name="email">
+        <label for="pwd2" class="mb-2 mr-sm-2">Senha:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Digite a senha" name="pswd">
+        <div class="form-check mb-2 mr-sm-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="remember"> Lembrar de mim
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+      </form>
+    </div>
+  </section>
+  <!-- Bootstrap 4 Form Inputs -->
+  <section class="p-2">
+    <!-- Formulário com controle de entrada (input) -->
+    <div class="container">
+      <h2>Controle de Formulário: Input</h2>
+      <p>O formulário abaixo contém dois campos de entrada: um do tipo texto e outro do tipo senha:</p>
+      <form action="/action_page.php">
+        <div class="form-group">
+          <label for="usr">Nome:</label>
+          <input type="text" class="form-control" id="usr" name="username">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Senha:</label>
+          <input type="password" class="form-control" id="pwd" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+  <!-- Menus de navegação -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Navegação</h2>
+      <p>Menu horizontal básico:</p>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Desativado</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Páginação básica -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Paginação</h2>
+      <p>Para criar uma paginação básica, adicione a classe .pagination em um elemento ul.
+        Em seguida, adicione a classe .page-item em cada elemento li e a classe .page-link em cada link dentro do li:
+      </p>
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+      </ul>
+    </div>
+  </section>
+  <!-- Grupo de listas básicas -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Lista Básica</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Primeiro item</li>
+        <li class="list-group-item">Segundo item</li>
+        <li class="list-group-item">Terceiro item</li>
+      </ul>
+    </div>
+  </section>
+  <!-- Tipos de cards -->
+  <section class="p-2">
+    <!-- Card básico -->
+    <div class="container">
+      <h2>Card Básico</h2>
+      <div class="card">
+        <div class="card-body">Card básico</div>
+      </div>
+    </div>
+    <!-- Card com cabeçalho e rodapé -->
+    <div class="container">
+      <h2>Card com Cabeçalho e Rodapé</h2>
+      <div class="card">
+        <div class="card-header">Cabeçalho</div>
+        <div class="card-body">Conteúdo</div>
+        <div class="card-footer">Rodapé</div>
+      </div>
+    </div>
+    <!-- Card com título, texto e links -->
+    <div class="container">
+      <h2>Card com título, texto e links</h2>
+      <p>Use .card-title para adicionar títulos ao card em qualquer elemento de título. A classe .card-text remove a
+        margem inferior de um elemento p quando ele é o último elemento dentro de card-body. A classe .card-link
+        adiciona cor azul aos links e efeito ao passar o mouse.</p>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Título do Card</h4>
+          <p class="card-text">Algum texto de exemplo. Algum texto de exemplo.</p>
+          <a href="#" class="card-link">Link do Card</a>
+          <a href="#" class="card-link">Outro Link</a>
+        </div>
+      </div>
+    </div>
+    <!-- Card com imagem -->
+    <div class="container">
+      <h2>Card com imagem</h2>
+      <p>Imagem no topo (card-img-top):</p>
+      <div class="card" style="width:400px">
+        <img class="card-img-top" src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" alt="Imagem do card"
+          style="width:100%">
+        <div class="card-body">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Algum texto de exemplo. John Doe é arquiteto e engenheiro.</p>
+          <a href="#" class="btn btn-primary">Ver Perfil</a>
+        </div>
+      </div>
+      <br>
+      <p>Imagem na parte inferior (card-img-bottom):</p>
+      <div class="card" style="width:400px">
+        <div class="card-body">
+          <h4 class="card-title">Jane Doe</h4>
+          <p class="card-text">Algum texto de exemplo. Jane Doe é arquiteta e engenheira.</p>
+          <a href="#" class="btn btn-primary">Ver Perfil</a>
+        </div>
+        <img class="card-img-bottom" src="https://www.tutorialspoint.com/bootstrap/images/64.jpg" alt="Imagem do card"
+          style="width:100%">
+      </div>
+    </div>
+  </section>
+  <!-- Menu suspenso básico -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Menus Suspensos (Dropdowns)</h2>
+      <p>A classe .dropdown é usada para indicar um menu suspenso.</p>
+      <p>Use a classe .dropdown-menu para construir o menu suspenso.</p>
+      <p>Para abrir o menu suspenso, use um botão ou um link com a classe .dropdown-toggle e o atributo
+        data-toggle="dropdown".</p>
+      <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Botão de Menu
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Basic Collapsible menu recolhivelL -->
+  <section class="p-2">
+    <div class="container">
+      <h2>Conteúdo Recolhível Simples</h2>
+      <p>Clique no botão para alternar entre mostrar e ocultar o conteúdo.</p>
+      <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+        Mostrar / Ocultar conteúdo
+      </button>
+      <div id="demo" class="collapse">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+      </div>
+    </div>
+  </section>
+  <!-- Container com grid (colunas)-->
+  <section class="p-2">
+    <div class="container pt-2">
+      <h1 class="text-center">Classe container-grid</h1>
+      <div class="row">
+        <div class="col-md-6 bg-primary text-white">
+          <h1>aaaaaa</h1>
+          <h1>aaaaaa</h1>
+          <h1>aaaaaa</h1>
+        </div>
+        <div class="col-md-6 bg-success text-white">
+          <h1>bbbbbb</h1>
+          <h1>bbbbbb</h1>
+          <h1>bbbbbb</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sistema de criação de grades O Bootstrap divide a largura da tela em 12 colunas. -->
+  <section class="p-2">
+    <h1 class="p-2 text-center">Sistema de criação de grades</h1>
+    <div class="container bg-info">
+      <div class="row">
+        <div class="col-sm">
+          One of three columns
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
+      </div>
+    </div>
+    <div class="container bg-primary">
+      <div class="row">
+        <div class="col">
+          1 of 2
+        </div>
+        <div class="col">
+          2 of 2
+        </div>
+      </div>
+    </div>
+    <div class="container bg-warning">
+      <div class="row">
+        <div class="col">
+          1 of 3
+        </div>
+        <div class="col">
+          2 of 3
+        </div>
+        <div class="col">
+          3 of 3
+        </div>
+      </div>
+      <div class="container bg-success">
+        <div class="row">
+          <div class="col-6">A</div>
+          <div class="col-6">B</div>
+        </div>
+        <!-- Resultado Cada coluna ocupa 6 de 12.-->
+        <!-- |------A------|------B------| -->
+      </div>
+  </section>
+  <!-- Criando tabelas -->
+  <section class="p-2">
+    <h2 class="p-2 text-center">Tabela zebrada</h2>
+    <!-- container cria uma área centralizada na página e controla a largura do conteúdo -->
+    <!-- mt-4 é uma classe do Bootstrap que adiciona margin-top (margem superior) -->
+    <div class="container mt-4">
+      <!-- table é a classe base do Bootstrap que estiliza tabelas -->
+      <!-- table-striped adiciona listras alternadas nas linhas da tabela -->
+      <table class="table table-striped">
+        <!-- thead representa o cabeçalho da tabela -->
+        <!-- normalmente contém os títulos das colunas -->
+        <thead>
+          <!-- tr significa "table row" (linha da tabela) -->
+          <!-- cada tr cria uma linha -->
+          <tr>
+            <!-- th significa "table header" -->
+            <!-- representa uma célula de título da coluna -->
+            <th>#</th>
+            <!-- título da coluna nome -->
+            <th>Nome</th>
+            <!-- título da coluna idade -->
+            <th>Idade</th>
+            <!-- título da coluna telefone -->
+            <th>Telefone</th>
+          </tr>
+        </thead>
+        <!-- tbody representa o corpo da tabela -->
+        <!-- onde ficam os dados -->
+        <tbody>
+          <!-- primeira linha de dados -->
+          <tr>
+            <!-- td significa "table data" -->
+            <!-- representa uma célula de dados -->
+            <td>1</td>
+            <!-- nome da pessoa -->
+            <td>José</td>
+            <!-- idade da pessoa -->
+            <td>20</td>
+            <!-- telefone da pessoa -->
+            <td>47-40042002</td>
+          </tr>
+          <!-- segunda linha da tabela -->
+          <tr>
+            <td>2</td>
+            <td>Ana</td>
+            <td>24</td>
+            <td>47-40042002</td>
+          </tr>
+          <!-- terceira linha da tabela -->
+          <tr>
+            <td>3</td>
+            <td>Pedro</td>
+            <td>30</td>
+            <td>47-40042002</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- Criando um colpase -->
+  <section class="p-2">
+    <div class="pos-f-t">
+      <div class="collapse.show" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Exemplo</h5>
+          <span class="text-muted">Texto escondido</span>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+
+  </section>
+  <!-- Algumas variações de alertas e alertas com links -->
+  <section class="p-2">
+    <div class="alert alert-primary" role="alert">Isso é um alerta!</div>
+    <div class="alert alert-secondary" role="alert">Isso é um alerta!</div>
+    <div class="alert alert-success" role="alert">Isso é um alerta!</div>
+    <div class="alert alert-danger" role="alert">Atenção!<a href="#" class="alert-link"> Isso é um alerta com link!</a>
+    </div>
+    <div class="alert alert-warning" role="alert">Atenção!<a href="#" class="alert-link"> Isso é um alerta com link!</a>
+    </div>
+    <div class="alert alert-info" role="alert">Atenção!<a href="#" class="alert-link"> Isso é um alerta com link!</a>
+    </div>
+    <div class="alert alert-light" role="alert">Atenção!<a href="#" class="alert-link"> Isso é um alerta com link!</a>
+    </div>
+  </section>
+  <!-- Agora um alerta com botão para fechar -->
+  <section class="p-2">
+    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        <span class="sr-only">Close</span>
+      </button>
+      <strong>Atenção!</strong> Agora você pode fechar esse alerta.
+    </div>
+  </section>
+  <!-- Criando uma barra de progresso -->
+  <section class="p-2">
+    <div class="progress mb-2">
+      <div class="progress-bar p-2" role="progressbar" style="width: 15%;" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">15%</div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar bg-success p-2" role="progressbar" style="width: 25%;" aria-valuenow="25"
+        aria-valuemin="0" aria-valuemax="100">25%</div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar bg-info" role="progressbar" style="width: 35%;" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100">35%</div>
+    </div>
+    <!-- Aqui uma variação com animação de progress bar -->
+    <div class="progress mb-2">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
+        style="width: 55%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">55%</div>
+    </div>
+    <div class="progress mb-2">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
+        style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+    </div>
+  </section>
+  <!-- Sessão utilizando animate CSS -->
+  <section class="p-2 d-flex justify-content-center">
+    <div class="p-2 card animated animate__flash text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated fadeInDown text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated animate__tada text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated animate__bounce text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated animate__rubberBand text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated animate__shakeX text-center">Este é um efeito com animate CSS</div>
+    <div class="p-2 card animated animate__swing text-center">Este é um efeito com animate CSS</div>
+
+  </section>
+  <!-- Sessão com divs para botões -->
+  <section class="p-1">
+    <div class="d-flex justify-content-center">
+      <div class="p-1">
+        <button class="btn btn-primary">Criar</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-success">Enviar</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-danger">Deletar</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-link btn-info text-dark">Neste site</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-warning" href="#">Não clique</button>
+      </div>
+    </div>
+  </section>
+  <!-- Sessão com div para variação de botões -->
+  <section class="p-2">
+    <div class="d-flex justify-content-center">
+      <div class="p-1">
+        <button class="btn btn-outline-success">Create</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-primary btn-lg">Send</button>
+      </div>
+      <div class="p-1">
+        <button class="btn btn-danger btn-sm">As site</button>
+      </div>
+    </div>
+    <div class="p-1">
+      <button class="btn btn-info btn-block">Delete</button>
+    </div>
+  </section>
+  <!-- Sessão com div para botão suspenso do tipo drop down -->
+  <section class="p-2">
+    <div class="p-2">
+      <div class="dropdown">
+        <button class="p-2 btn btn-primary" data-toggle="dropdown">
+          Menu do tipo Drop down
+        </button>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Item um</a>
+          <a href="#" class="dropdown-item">Item dois</a>
+          <a href="#" class="dropdown-item">Item três</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Sessão com div para grupo de botões horizontais -->
+  <section class="p-2">
+    <div class="p-2">
+      <div class="btn-group">
+        <button class="btn btn-primary">Um</button>
+        <button class="btn btn-success">Dois</button>
+        <button class="btn btn-info">Três</button>
+      </div>
+    </div>
+  </section>
+  <!-- Sessão com div para grupo de botões verticais -->
+  <section class="p-2">
+    <div class="p-2">
+      <div class="btn-group-vertical">
+        <button class="btn btn-primary">Um</button>
+        <button class="btn btn-success">Dois</button>
+        <button class="btn btn-info">Três</button>
+      </div>
+    </div>
+  </section>
+  <!-- Sessão com ícones fontawesome -->
+  <section class="p-2">
+    <button class="p-2 btn btn-primary">
+      <i class="fa fa-user"></i>
+      Botão com ícone de usuário
+    </button>
+  </section>
+  <!-- Sessão com list group horizontal -->
+  <section class="p-2">
+    <div class="p2"></div>
+    <ul class="list-group list-group-sm list-group-horizontal">
+      <li class="list-group-item">Grupo Um</li>
+      <li class="list-group-item">Grupo dois</li>
+      <li class="list-group-item">Grupo Três</li>
+    </ul>
+    </div>
+  </section>
+  <!-- Sessão com list group vertical -->
+  <section class="p-2">
+    <div class="p2"></div>
+    <ul class="list-group list-group-sm">
+      <li class="list-group-item">Grupo Um</li>
+      <li class="list-group-item">Grupo dois</li>
+      <li class="list-group-item">Grupo Três</li>
+    </ul>
+    </div>
+  </section>
+  <!-- Sessão com classe badge usados para mostrar número de mensagens -->
+  <section class="p-2">
+    <button type="button" class="btn btn-warning">
+      Alerta <span class="badge badge-light">Mensagens não lidas (29)</span>
+    </button>
+  </section>
+  <!-- Sessao com mais exemplos de badges tamanho padrão -->
+  <section class="p-2">
+    <span class="badge badge-primary">Um dois</span>
+    <span class="badge badge-secondary">Um três</span>
+    <span class="badge badge-success">Um quatro</span>
+    <span class="badge badge-danger">Um cinco</span>
+    <span class="badge badge-warning">Um seis</span>
+    <span class="badge badge-info">Um sete</span>
+    <span class="badge badge-light">Um oito</span>
+    <span class="badge badge-dark">Um Nove</span>
+  </section>
+  <!-- Sessão com mais exemplos de badges no formato mais oval -->
+  <section class="p-2">
+    <span class="badge badge-pill badge-primary">Um dois</span>
+    <span class="badge badge-pill badge-secondary">Um três</span>
+    <span class="badge badge-pill badge-success">Um quatro</span>
+    <span class="badge badge-pill badge-danger">Um cinco</span>
+    <span class="badge badge-pill badge-warning">Um seis</span>
+    <span class="badge badge-pill badge-info">Um sete</span>
+    <span class="badge badge-pill badge-light">Um oito</span>
+    <span class="badge badge-pill badge-dark">Um Nove</span>
+  </section>
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

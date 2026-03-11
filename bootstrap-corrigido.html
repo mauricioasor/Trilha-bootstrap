@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Animate CSS: biblioteca de animações prontas -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Bootstrap CSS: framework principal -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+  <!-- Font Awesome: biblioteca de ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Bootstrap Icons: ícones oficiais do Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <title>Aprendendo Bootstrap 4.6 no UNISENAI</title>
+
+  <style>
+    /* Caixa de descrição visual exibida na página */
+    .bs-desc {
+      background: #f8f9fa;
+      border-left: 4px solid #6c757d;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.875rem;
+      color: #495057;
+      border-radius: 0 4px 4px 0;
+    }
+    .bs-desc code {
+      background: #e9ecef;
+      color: #d63384;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 0.85em;
+    }
+    .bs-desc .variações {
+      display: block;
+      margin-top: 4px;
+      color: #6c757d;
+    }
+    /* Cabeçalho de categoria */
+    .categoria-titulo {
+      background: #343a40;
+      color: #fff;
+      padding: 10px 16px;
+      margin: 24px 0 0 0;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border-radius: 4px 4px 0 0;
+    }
+    .categoria-titulo span {
+      color: #adb5bd;
+      font-weight: 400;
+      font-size: 0.85rem;
+      margin-left: 8px;
+    }
+    hr.divisor {
+      border-top: 2px dashed #dee2e6;
+      margin: 24px 0;
+    }
+  </style>
+</head>
+
+<!-- body: p-3 → padding de 1rem em todos os lados -->
+<body class="p-3">
+
+
+  <!-- ============================================================
+       CATEGORIA 1: LAYOUT
+       Containers controlam a largura do conteúdo.
+       Grid divide a página em até 12 colunas responsivas.
+  ============================================================ -->
+  <div class="categoria-titulo">📐 CATEGORIA 1: LAYOUT <span>→ Containers, Grid</span></div>
+
+  <!-- ─── CONTAINERS ─────────────────────────────────────────── -->
+  <section class="p-2">
+  <!-- p-2: padding de 0.5rem em todos os lados -->
+
+    <h4 class="mt-3">Containers</h4>
+    <!-- mt-3: margin-top de 1rem -->
+
+    <!-- .container → largura máxima centralizada com margens automáticas -->
+    <p class="bs-desc">
+      A classe <code>.container</code> define uma largura máxima responsiva e centraliza o conteúdo com margens automáticas.
+      <span class="variações">Variações: <code>.container-sm</code> (≥576px) · <code>.container-md</code> (≥768px) · <code>.container-lg</code> (≥992px) · <code>.container-xl</code> (≥1200px) · <code>.container-fluid</code> (100% sempre)</span>
+    </p>
+    <div class="container mb-2 py-3 bg-success text-white text-center">
+    <!--
+      container   → largura máxima responsiva, centralizada automaticamente
+      mb-2        → margin-bottom de 0.5rem
+      py-3        → padding-top e padding-bottom de 1rem
+      bg-success  → fundo verde
+      text-white  → texto branco
+      text-center → texto centralizado
+    -->
+      <h5 class="mb-0">.container — largura máxima centralizada</h5>
+    </div>
+
+    <!-- .container-fluid → sempre 100% da largura da tela -->
+    <p class="bs-desc">
+      A classe <code>.container-fluid</code> faz o elemento ocupar 100% da largura disponível em qualquer tela.
+    </p>
+    <div class="container-fluid mb-2 py-3 bg-info text-white text-center">
+    <!--
+      container-fluid → ocupa 100% da largura em qualquer tamanho de tela
+      bg-info         → fundo ciano
+    -->
+      <h5 class="mb-0">.container-fluid — 100% da largura</h5>
+    </div>
+
+    <!-- .container-sm → 100% até 576px, largura fixa acima -->
+    <p class="bs-desc">
+      A classe <code>.container-sm</code> ocupa 100% da largura em telas menores que 576px. Acima disso, tem largura fixa.
+      <span class="variações">Funciona igual para <code>.container-md</code>, <code>.container-lg</code> e <code>.container-xl</code>, cada um com seu breakpoint.</span>
+    </p>
+    <div class="container-sm py-3 bg-warning text-dark text-center">
+    <!--
+      container-sm → 100% abaixo de 576px, largura fixa acima
+      bg-warning   → fundo amarelo
+      text-dark    → texto escuro (ideal sobre fundos claros)
+    -->
+      <h5 class="mb-0">.container-sm — 100% abaixo de 576px, fixo acima</h5>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── GRID ────────────────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Sistema de Grades</h4>
+
+    <!-- .row + .col-sm → 3 colunas iguais que empilham em mobile -->
+    <p class="bs-desc">
+      A classe <code>.row</code> cria uma linha horizontal do grid. Sempre deve estar dentro de um container.
+      <span class="variações">A classe <code>.col</code> divide o espaço igualmente. Use <code>.col-sm</code>, <code>.col-md</code>, <code>.col-lg</code> para controle por breakpoint.</span>
+    </p>
+    <div class="container mb-2 py-2 bg-info text-white">
+      <div class="row">
+      <!-- row: agrupa colunas em uma linha horizontal -->
+        <div class="col-sm border text-center">.col-sm</div>
+        <div class="col-sm border text-center">.col-sm</div>
+        <div class="col-sm border text-center">.col-sm</div>
+        <!--
+          col-sm → coluna igual que empilha em telas < 576px
+          border → borda em todos os lados
+        -->
+      </div>
+    </div>
+
+    <!-- .col → divide espaço automaticamente (sem número) -->
+    <p class="bs-desc">
+      Use <code>.col</code> sem número para dividir o espaço automaticamente entre os filhos.
+    </p>
+    <div class="container mb-2 py-2 bg-primary text-white">
+      <div class="row">
+        <div class="col border text-center">.col (1 de 2)</div>
+        <div class="col border text-center">.col (2 de 2)</div>
+        <!-- col: divide igualmente o espaço disponível -->
+      </div>
+    </div>
+
+    <div class="container mb-2 py-2 bg-warning text-dark">
+      <div class="row">
+        <div class="col border text-center">.col (1 de 3)</div>
+        <div class="col border text-center">.col (2 de 3)</div>
+        <div class="col border text-center">.col (3 de 3)</div>
+      </div>
+    </div>
+
+    <!-- .col-6 → ocupa 6 das 12 colunas (50%) -->
+    <p class="bs-desc">
+      Use <code>.col-{n}</code> para definir o tamanho exato em colunas (de 1 a 12). A grade tem 12 colunas no total.
+      <span class="variações">Exemplos: <code>.col-6</code> = 50% · <code>.col-4</code> = 33% · <code>.col-3</code> = 25% · <code>.col-12</code> = 100%</span>
+    </p>
+    <div class="container mb-2 py-2 bg-success text-white">
+      <div class="row">
+        <div class="col-6 border text-center">.col-6 (A)</div>
+        <div class="col-6 border text-center">.col-6 (B)</div>
+        <!-- col-6: ocupa 6/12 colunas = 50% da largura -->
+      </div>
+    </div>
+
+    <!-- .col-md-6 → 50% em telas médias, 100% em telas menores -->
+    <p class="bs-desc">
+      Combine breakpoints para layouts responsivos: <code>.col-md-6</code> ocupa metade em telas médias (≥768px) e 100% abaixo disso.
+    </p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 p-3 bg-primary text-white">.col-md-6 — Coluna A</div>
+        <div class="col-md-6 p-3 bg-success text-white">.col-md-6 — Coluna B</div>
+        <!--
+          col-md-6 → 6/12 (50%) em telas ≥ 768px, 100% abaixo
+          p-3      → padding de 1rem em todos os lados
+        -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 2: NAVEGAÇÃO
+       Navbar, Nav e Paginação organizam links e menus.
+  ============================================================ -->
+  <div class="categoria-titulo">🧭 CATEGORIA 2: NAVEGAÇÃO <span>→ Navbar, Nav, Paginação</span></div>
+
+  <!-- ─── NAVBAR PRINCIPAL ────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Navbar Principal</h4>
+    <p class="bs-desc">
+      A classe <code>.navbar</code> cria a barra de navegação. Use <code>.navbar-expand-lg</code> para definir o breakpoint de expansão (acima disso fica horizontal, abaixo vira hamburguer).
+      <span class="variações">
+        Temas: <code>.navbar-dark</code> (ícones claros) · <code>.navbar-light</code> (ícones escuros)<br>
+        Breakpoints: <code>.navbar-expand-sm</code> · <code>.navbar-expand-md</code> · <code>.navbar-expand-lg</code> · <code>.navbar-expand-xl</code><br>
+        <code>.navbar-brand</code> → logo/nome · <code>.navbar-toggler</code> → botão hamburguer · <code>.navbar-nav</code> → lista de links<br>
+        <code>.nav-item</code> → item da lista · <code>.nav-link</code> → link estilizado · <code>.active</code> → página atual · <code>.disabled</code> → link desativado<br>
+        <code>.dropdown-toggle</code> → abre submenu · <code>.dropdown-menu</code> → painel do submenu · <code>.dropdown-item</code> → item do submenu · <code>.dropdown-divider</code> → separador
+      </span>
+    </p>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--
+      navbar           → componente de barra de navegação
+      navbar-expand-lg → expande horizontalmente em telas ≥ 992px
+      navbar-dark      → ícones e textos claros (para fundos escuros)
+      bg-primary       → fundo azul
+    -->
+      <!-- navbar-brand: logo ou nome do site -->
+      <a class="navbar-brand text-white" href="#">
+      <!-- navbar-brand: estiliza o link principal/logo da navbar -->
+        <i class="bi bi-emoji-dizzy mr-2"></i>Início
+        <!-- mr-2: margin-right de 0.5rem entre ícone e texto -->
+      </a>
+
+      <!-- navbar-toggler: botão hamburguer visível apenas em mobile -->
+      <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+      <!--
+        navbar-toggler         → botão que mostra/oculta o menu em telas pequenas
+        data-toggle="collapse" → ativa o comportamento via JavaScript
+        data-target            → aponta para o ID do elemento a mostrar/ocultar
+      -->
+        <span class="navbar-toggler-icon"></span>
+        <!-- navbar-toggler-icon: renderiza o ícone hamburguer (≡) -->
+      </button>
+
+      <!-- collapse navbar-collapse: área que recolhe/expande -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!--
+        collapse        → elemento começa oculto em mobile
+        navbar-collapse → específico para recolher dentro da navbar
+      -->
+        <!-- navbar-nav: lista de links de navegação -->
+        <ul class="navbar-nav mr-auto">
+        <!--
+          navbar-nav → lista de itens de navegação
+          mr-auto    → empurra o formulário de busca para a direita
+        -->
+          <li class="nav-item active">
+          <!--
+            nav-item → item individual da lista
+            active   → indica a página atual (destaca visualmente)
+          -->
+            <a class="nav-link text-white" href="#">
+            <!-- nav-link: link com padding adequado para navbar -->
+              Produtos <span class="sr-only">(current)</span>
+              <!-- sr-only: visível apenas para leitores de tela (acessibilidade) -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Link</a>
+          </li>
+
+          <!-- nav-item dropdown: item com submenu suspenso -->
+          <li class="nav-item dropdown">
+          <!-- dropdown: indica que este item possui submenu -->
+            <a class="nav-link dropdown-toggle text-white" href="#"
+              id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <!--
+              dropdown-toggle        → adiciona a seta indicativa (▾)
+              data-toggle="dropdown" → ativa o submenu via JavaScript
+            -->
+              Mais
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- dropdown-menu: painel do submenu (oculto por padrão) -->
+              <a class="dropdown-item" href="#">Action 1</a>
+              <!-- dropdown-item: item clicável dentro do submenu -->
+              <div class="dropdown-divider"></div>
+              <!-- dropdown-divider: linha separadora entre itens -->
+              <a class="dropdown-item" href="#">Action 2</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Action 3</a>
+            </div>
+          </li>
+
+          <!-- nav-link disabled: link desativado -->
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apenas visual</a>
+            <!--
+              disabled     → deixa o link cinza e sem interação
+              tabindex="-1 → remove da navegação por teclado
+            -->
+          </li>
+        </ul>
+
+        <!-- form-inline: formulário em linha dentro da navbar -->
+        <form class="form-inline my-2 my-lg-0">
+        <!--
+          form-inline → campos alinhados horizontalmente
+          my-2        → margem vertical de 0.5rem
+          my-lg-0     → remove a margem em telas ≥ 992px
+        -->
+          <input class="form-control mr-sm-2" type="text" placeholder="Pesquise algo" aria-label="Search" />
+          <!-- form-control: estiliza o input com borda, padding e largura 100% -->
+          <button class="btn my-2 my-sm-0 btn-outline-light" type="submit">Pesquisar</button>
+          <!-- btn-outline-light: botão transparente com borda e texto claros -->
+        </form>
+      </div>
+    </nav>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── NAVBAR BÁSICA ───────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Navbar Básica</h4>
+    <p class="bs-desc">
+      Use <code>.navbar-expand-sm</code> para uma navbar que expande em telas ≥576px. Combine com <code>.bg-light</code> para fundo claro.
+    </p>
+    <nav class="navbar navbar-expand-sm bg-light">
+    <!--
+      navbar-expand-sm → expande horizontalmente em telas ≥ 576px
+      bg-light         → fundo branco-acinzentado
+    -->
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Link 1</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Link 3</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── NAV MENU SIMPLES ────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Navegação Simples</h4>
+    <p class="bs-desc">
+      A classe <code>.nav</code> cria um menu de navegação horizontal simples.
+      <span class="variações">Variações: <code>.nav-tabs</code> (abas) · <code>.nav-pills</code> (pílulas) · <code>.justify-content-center</code> (centralizado) · <code>.justify-content-end</code> (à direita)</span>
+    </p>
+    <ul class="nav">
+    <!-- nav: menu de navegação horizontal simples -->
+      <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Desativado</a>
+        <!-- disabled: cinza e sem clique -->
+      </li>
+    </ul>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── PAGINAÇÃO ───────────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Paginação</h4>
+    <p class="bs-desc">
+      Adicione a classe <code>.pagination</code> em um <code>&lt;ul&gt;</code>, a classe <code>.page-item</code> em cada <code>&lt;li&gt;</code> e <code>.page-link</code> em cada link.
+      <span class="variações">Estados: <code>.active</code> (página atual) · <code>.disabled</code> (desativado) &nbsp;|&nbsp; Tamanhos: <code>.pagination-lg</code> · <code>.pagination-sm</code></span>
+    </p>
+    <ul class="pagination">
+    <!-- pagination: componente de paginação estilizado -->
+      <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+      <!--
+        page-item → item individual da paginação
+        page-link → estiliza o link dentro do item
+      -->
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+    </ul>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 3: CONTEÚDO
+       Apresentação, Jumbotron, Imagens e Tabelas.
+  ============================================================ -->
+  <div class="categoria-titulo">📄 CATEGORIA 3: CONTEÚDO <span>→ Apresentação, Jumbotron, Imagens, Tabelas</span></div>
+
+  <!-- ─── APRESENTAÇÃO ────────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Apresentação</h4>
+    <p class="bs-desc">
+      Use <code>.bg-{cor}</code> para cor de fundo, <code>.text-{cor}</code> para cor do texto, <code>.text-center</code> para centralizar e <code>.rounded</code> para bordas arredondadas.
+      <span class="variações">
+        Fundos: <code>.bg-primary</code> · <code>.bg-success</code> · <code>.bg-warning</code> · <code>.bg-danger</code> · <code>.bg-info</code> · <code>.bg-dark</code> · <code>.bg-light</code><br>
+        Texto: <code>.text-white</code> · <code>.text-dark</code> · <code>.text-muted</code> · <code>.text-primary</code> · <code>.text-info</code><br>
+        Bordas: <code>.rounded</code> · <code>.rounded-lg</code> · <code>.rounded-pill</code> · <code>.rounded-circle</code> · <code>.rounded-0</code>
+      </span>
+    </p>
+    <div class="container p-2">
+      <h1 class="py-2 rounded bg-success text-white text-center">Olá, me chamo Maurício!</h1>
+      <!--
+        py-2        → padding vertical de 0.5rem
+        rounded     → bordas arredondadas
+        bg-success  → fundo verde
+        text-white  → texto branco
+        text-center → texto centralizado
+      -->
+      <h2 class="mt-2 py-2 rounded bg-warning text-dark text-center">Sou aluno ADS Unisenai!!</h2>
+      <!-- mt-2: margem superior de 0.5rem | bg-warning: fundo amarelo | text-dark: texto escuro -->
+      <h3 class="mt-2 text-info text-center">Estou no segundo ano letivo!!!</h3>
+      <!-- text-info: texto ciano -->
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── JUMBOTRON ───────────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">Jumbotron</h4>
+    <p class="bs-desc">
+      A classe <code>.jumbotron</code> cria uma caixa de destaque grande com fundo cinza claro, usada para chamar atenção ao conteúdo principal.
+      <span class="variações">Variação: <code>.jumbotron-fluid</code> → ocupa 100% da largura (sem bordas arredondadas)</span>
+    </p>
+    <div class="container">
+      <div class="jumbotron">
+      <!-- jumbotron: caixa cinza grande de destaque -->
+        <h1>Classe Jumbotron</h1>
+        <p>Um jumbotron indica uma grande caixa cinza para chamar atenção extra para algum conteúdo ou informação especial. Dentro de um jumbotron você pode colocar praticamente qualquer HTML válido, incluindo outros elementos/classes do Bootstrap.</p>
+      </div>
+      <p>Outros textos.</p>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── IMAGENS ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Imagens</h4>
+
+      <!-- img-fluid: imagem responsiva -->
+      <p class="bs-desc">
+        A classe <code>.img-fluid</code> torna a imagem responsiva: <code>max-width: 100%</code> e <code>height: auto</code>. A imagem encolhe em telas menores sem distorcer.
+      </p>
+      <div class="mb-4">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="img-fluid" alt="Imagem responsiva" width="200" height="200">
+        <!-- img-fluid: max-width 100%, height auto — imagem responsiva -->
+      </div>
+
+      <!-- d-block + mx-auto: imagem centralizada -->
+      <p class="bs-desc">
+        Use <code>.d-block</code> + <code>.mx-auto</code> para centralizar uma imagem. <code>.d-block</code> aplica <code>display: block</code> e <code>.mx-auto</code> define margens horizontais automáticas.
+        <span class="variações">Outros displays: <code>.d-none</code> · <code>.d-inline</code> · <code>.d-inline-block</code> · <code>.d-flex</code> &nbsp;|&nbsp; Responsivos: <code>.d-sm-none</code> · <code>.d-md-block</code></span>
+      </p>
+      <div class="mb-4">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="d-block mx-auto" alt="Imagem centralizada" width="200" height="200">
+        <!--
+          d-block  → display: block (necessário para mx-auto funcionar)
+          mx-auto  → margin-left e margin-right automáticas (centraliza)
+        -->
+      </div>
+
+      <!-- rounded: bordas arredondadas -->
+      <p class="bs-desc">
+        A classe <code>.rounded</code> aplica bordas levemente arredondadas na imagem.
+      </p>
+      <div class="mb-4">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="rounded" alt="Imagem rounded" width="200" height="200">
+        <!-- rounded: border-radius padrão (~0.25rem) -->
+      </div>
+
+      <!-- rounded-circle: imagem circular -->
+      <p class="bs-desc">
+        A classe <code>.rounded-circle</code> aplica <code>border-radius: 50%</code>, transformando a imagem em um círculo perfeito.
+      </p>
+      <div class="mb-4">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="rounded-circle" alt="Imagem circular" width="200" height="200">
+        <!-- rounded-circle: border-radius 50%, forma circular -->
+      </div>
+
+      <!-- float-left / float-right: imagens alinhadas -->
+      <p class="bs-desc">
+        Use <code>.float-left</code> e <code>.float-right</code> para alinhar imagens. Adicione <code>.clearfix</code> no elemento pai para evitar colapso de altura.
+        <span class="variações">Responsivos: <code>.float-sm-left</code> · <code>.float-md-right</code> · <code>.float-none</code></span>
+      </p>
+      <div class="clearfix mb-4">
+      <!-- clearfix: limpa os floats no pai, evita colapso de altura -->
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="float-left mr-2" alt="Imagem à esquerda" width="200" height="200">
+        <!-- float-left: flutua à esquerda | mr-2: margem direita de 0.5rem -->
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="float-right ml-2" alt="Imagem à direita" width="200" height="200">
+        <!-- float-right: flutua à direita | ml-2: margem esquerda de 0.5rem -->
+      </div>
+
+      <!-- img-thumbnail: imagem com borda e padding -->
+      <p class="bs-desc">
+        A classe <code>.img-thumbnail</code> adiciona borda fina, padding e bordas arredondadas. Ideal para galerias.
+      </p>
+      <div class="mb-2">
+        <img src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          class="img-thumbnail" alt="Imagem thumbnail" width="200" height="200">
+        <!-- img-thumbnail: borda fina + padding + border-radius pequeno -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── TABELAS ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container mt-4">
+      <h4 class="mt-3">Tabelas</h4>
+      <p class="bs-desc">
+        A classe <code>.table</code> aplica o estilo base do Bootstrap nas tabelas. Combine com modificadores para mais recursos.
+        <span class="variações">
+          <code>.table-striped</code> → linhas alternadas (zebra) &nbsp;·&nbsp; <code>.table-bordered</code> → bordas em todas as células<br>
+          <code>.table-hover</code> → destaca linha ao passar o mouse &nbsp;·&nbsp; <code>.table-dark</code> → fundo escuro &nbsp;·&nbsp; <code>.table-sm</code> → células compactas<br>
+          <code>.thead-dark</code> → cabeçalho escuro &nbsp;·&nbsp; <code>.thead-light</code> → cabeçalho cinza claro
+        </span>
+      </p>
+      <table class="table table-striped">
+      <!--
+        table         → estilo base para tabelas Bootstrap
+        table-striped → linhas alternadas em cinza e branco (zebra)
+      -->
+        <thead class="thead-dark">
+        <!-- thead-dark: cabeçalho com fundo escuro e texto branco -->
+          <tr>
+            <th>#</th><th>Nome</th><th>Idade</th><th>Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>José</td><td>20</td><td>47-40042002</td></tr>
+          <tr><td>2</td><td>Ana</td><td>24</td><td>47-40042002</td></tr>
+          <tr><td>3</td><td>Pedro</td><td>30</td><td>47-40042002</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 4: COMPONENTES DE LISTA
+       List Group e Cards agrupam conteúdo visualmente.
+  ============================================================ -->
+  <div class="categoria-titulo">📋 CATEGORIA 4: COMPONENTES DE LISTA <span>→ List Group, Cards</span></div>
+
+  <!-- ─── LIST GROUP ───────────────────────────────────────────── -->
+  <section class="p-2">
+    <h4 class="mt-3">List Group</h4>
+    <p class="bs-desc">
+      A classe <code>.list-group</code> cria uma lista estilizada com bordas e espaçamento. Cada item recebe <code>.list-group-item</code>.
+      <span class="variações">
+        Layout: <code>.list-group-flush</code> (sem bordas externas) · <code>.list-group-horizontal</code> (itens em linha)<br>
+        Itens: <code>.active</code> (destaca) · <code>.disabled</code> (desativa) · <code>.list-group-item-success</code> / <code>-danger</code> / <code>-warning</code> etc.
+      </span>
+    </p>
+
+    <div class="container">
+      <p class="text-muted mb-1">Vertical (padrão):</p>
+      <ul class="list-group mb-3">
+      <!-- list-group: lista estilizada com bordas e espaçamento -->
+        <li class="list-group-item">Primeiro item</li>
+        <li class="list-group-item">Segundo item</li>
+        <li class="list-group-item">Terceiro item</li>
+        <!-- list-group-item: item individual da lista -->
+      </ul>
+
+      <!-- list-group-horizontal: itens lado a lado -->
+      <p class="bs-desc">
+        Adicione <code>.list-group-horizontal</code> para exibir os itens lado a lado.
+        <span class="variações">Responsivo: <code>.list-group-horizontal-sm</code> · <code>.list-group-horizontal-md</code> · <code>.list-group-horizontal-lg</code></span>
+      </p>
+      <p class="text-muted mb-1">Horizontal:</p>
+      <ul class="list-group list-group-horizontal mb-3">
+      <!-- list-group-horizontal: exibe itens em linha -->
+        <li class="list-group-item">Grupo Um</li>
+        <li class="list-group-item">Grupo Dois</li>
+        <li class="list-group-item">Grupo Três</li>
+      </ul>
+
+      <p class="text-muted mb-1">Vertical:</p>
+      <ul class="list-group mb-3">
+        <li class="list-group-item">Grupo Um</li>
+        <li class="list-group-item">Grupo Dois</li>
+        <li class="list-group-item">Grupo Três</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── CARDS ────────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Cards</h4>
+      <p class="bs-desc">
+        A classe <code>.card</code> cria um contêiner flexível com borda, fundo branco e bordas arredondadas. Use as subclasses para estruturar o conteúdo interno.
+        <span class="variações">
+          <code>.card-header</code> → topo &nbsp;·&nbsp; <code>.card-body</code> → corpo principal &nbsp;·&nbsp; <code>.card-footer</code> → rodapé<br>
+          <code>.card-title</code> → título &nbsp;·&nbsp; <code>.card-text</code> → parágrafo &nbsp;·&nbsp; <code>.card-link</code> → link estilizado<br>
+          <code>.card-img-top</code> → imagem no topo &nbsp;·&nbsp; <code>.card-img-bottom</code> → imagem no rodapé
+        </span>
+      </p>
+
+      <p class="text-muted mb-1">Card básico com <code>.card-body</code>:</p>
+      <div class="card mb-3">
+      <!-- card: contêiner com borda, fundo branco e border-radius -->
+        <div class="card-body">Card básico</div>
+        <!-- card-body: área principal de conteúdo com padding -->
+      </div>
+
+      <p class="text-muted mb-1">Card com <code>.card-header</code>, <code>.card-body</code> e <code>.card-footer</code>:</p>
+      <div class="card mb-3">
+        <div class="card-header">Cabeçalho</div>
+        <!-- card-header: topo do card, fundo cinza claro por padrão -->
+        <div class="card-body">Conteúdo</div>
+        <div class="card-footer">Rodapé</div>
+        <!-- card-footer: rodapé do card, fundo cinza claro por padrão -->
+      </div>
+
+      <p class="text-muted mb-1">Card com <code>.card-title</code>, <code>.card-text</code> e <code>.card-link</code>:</p>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h4 class="card-title">Título do Card</h4>
+          <!-- card-title: título dentro do card-body -->
+          <p class="card-text">Algum texto de exemplo. Algum texto de exemplo.</p>
+          <!-- card-text: remove margin-bottom quando é o último elemento -->
+          <a href="#" class="card-link">Link do Card</a>
+          <!-- card-link: cor azul e espaçamento entre links -->
+          <a href="#" class="card-link">Outro Link</a>
+        </div>
+      </div>
+
+      <p class="text-muted mb-1">Card com imagem no topo usando <code>.card-img-top</code>:</p>
+      <div class="card mb-3" style="width: 400px;">
+        <img class="card-img-top" src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          alt="Imagem do card" style="width: 100%;">
+        <!-- card-img-top: imagem no topo com bordas superiores arredondadas -->
+        <div class="card-body">
+          <h4 class="card-title">John Doe</h4>
+          <p class="card-text">Algum texto de exemplo. John Doe é arquiteto e engenheiro.</p>
+          <a href="#" class="btn btn-primary">Ver Perfil</a>
+        </div>
+      </div>
+
+      <p class="text-muted mb-1">Card com imagem no rodapé usando <code>.card-img-bottom</code>:</p>
+      <div class="card mb-3" style="width: 400px;">
+        <div class="card-body">
+          <h4 class="card-title">Jane Doe</h4>
+          <p class="card-text">Algum texto de exemplo. Jane Doe é arquiteta e engenheira.</p>
+          <a href="#" class="btn btn-primary">Ver Perfil</a>
+        </div>
+        <img class="card-img-bottom" src="https://www.tutorialspoint.com/bootstrap/images/64.jpg"
+          alt="Imagem do card" style="width: 100%;">
+        <!-- card-img-bottom: imagem no rodapé com bordas inferiores arredondadas -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 5: FORMULÁRIOS
+       Estruturam campos de entrada de dados do usuário.
+  ============================================================ -->
+  <div class="categoria-titulo">📝 CATEGORIA 5: FORMULÁRIOS <span>→ Empilhado, Inline, Input</span></div>
+
+  <!-- ─── FORMULÁRIO EMPILHADO ────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Formulário Empilhado</h4>
+      <p class="bs-desc">
+        A classe <code>.form-group</code> agrupa label e input com margin-bottom entre eles. A classe <code>.form-control</code> estiliza inputs, selects e textareas com borda, padding e largura 100%.
+        <span class="variações">
+          Tamanhos: <code>.form-control-lg</code> · <code>.form-control-sm</code><br>
+          Checkbox/Radio: <code>.form-check</code> · <code>.form-check-input</code> · <code>.form-check-label</code>
+        </span>
+      </p>
+      <form action="/action_page.php">
+        <div class="form-group">
+        <!-- form-group: agrupa label + input com margin-bottom -->
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Digite o email" name="email">
+          <!-- form-control: borda, padding, border-radius e largura 100% -->
+        </div>
+        <div class="form-group">
+          <label for="pwd">Senha:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Digite a senha" name="pswd">
+        </div>
+        <div class="form-group form-check">
+        <!--
+          form-check → posicionamento correto para checkboxes e radios
+        -->
+          <label class="form-check-label">
+          <!-- form-check-label: label associada ao form-check-input -->
+            <input class="form-check-input" type="checkbox" name="remember"> Lembrar de mim
+            <!-- form-check-input: checkbox ou radio estilizado -->
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── FORMULÁRIO INLINE ───────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Formulário Inline</h4>
+      <p class="bs-desc">
+        A classe <code>.form-inline</code> coloca todos os campos em linha (horizontal) em telas ≥576px. Em telas menores, os campos empilham automaticamente.
+      </p>
+      <form class="form-inline" action="/action_page.php">
+      <!-- form-inline: campos em linha em telas ≥ 576px -->
+        <label for="email2" class="mb-2 mr-sm-2">Email:</label>
+        <!-- mr-sm-2: margin-right de 0.5rem em telas ≥ 576px -->
+        <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Digite o email" name="email">
+        <label for="pwd2" class="mb-2 mr-sm-2">Senha:</label>
+        <input type="text" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Digite a senha" name="pswd">
+        <div class="form-check mb-2 mr-sm-2">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="remember"> Lembrar de mim
+          </label>
+        </div>
+        <button type="submit" class="btn mb-2 btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── CONTROLE DE INPUT ───────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Controle de Formulário: Input</h4>
+      <p class="bs-desc">
+        Use <code>.form-control</code> em qualquer <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code> ou <code>&lt;textarea&gt;</code> para aplicar o estilo Bootstrap padrão.
+      </p>
+      <form action="/action_page.php">
+        <div class="form-group">
+          <label for="usr">Nome:</label>
+          <input type="text" class="form-control" id="usr" name="username">
+          <!-- form-control: estiliza o input com borda, padding e largura 100% -->
+        </div>
+        <div class="form-group">
+          <label for="pwd3">Senha:</label>
+          <input type="password" class="form-control" id="pwd3" name="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 6: FEEDBACK
+       Alertas, Badges, Spinners e Progress informam o usuário.
+  ============================================================ -->
+  <div class="categoria-titulo">🔔 CATEGORIA 6: FEEDBACK <span>→ Alertas, Badges, Spinners, Progress</span></div>
+
+  <!-- ─── ALERTAS ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Alertas</h4>
+      <p class="bs-desc">
+        A classe <code>.alert</code> cria uma caixa de notificação. Combine com uma classe contextual para definir a cor.
+        <span class="variações">
+          <code>.alert-success</code> (verde) · <code>.alert-info</code> (ciano) · <code>.alert-warning</code> (amarelo) · <code>.alert-danger</code> (vermelho)<br>
+          <code>.alert-primary</code> (azul) · <code>.alert-secondary</code> (cinza) · <code>.alert-dark</code> (escuro) · <code>.alert-light</code> (claro)
+        </span>
+      </p>
+      <!-- alert + alert-{cor}: caixa de notificação colorida -->
+      <div class="alert alert-success"><strong>Sucesso!</strong> Ação bem-sucedida ou positiva.</div>
+      <div class="alert alert-info"><strong>Informação!</strong> Informação ou mudança neutra.</div>
+      <div class="alert alert-warning"><strong>Atenção!</strong> Aviso que precisa de atenção.</div>
+      <div class="alert alert-danger"><strong>Perigo!</strong> Ação perigosa ou potencialmente negativa.</div>
+      <div class="alert alert-primary"><strong>Principal!</strong> Ação importante.</div>
+      <div class="alert alert-secondary"><strong>Secundário!</strong> Ação menos importante.</div>
+      <div class="alert alert-dark"><strong>Escuro!</strong> Alerta em cinza escuro.</div>
+      <div class="alert alert-light"><strong>Claro!</strong> Alerta em cinza claro.</div>
+
+      <!-- alert-link: link com cor compatível ao tipo do alerta -->
+      <p class="bs-desc mt-3">
+        Use <code>.alert-link</code> para estilizar links dentro de alertas com a cor compatível ao tipo do alerta.
+      </p>
+      <div class="alert alert-danger" role="alert">Atenção! <a href="#" class="alert-link">Alerta com link!</a></div>
+      <div class="alert alert-warning" role="alert">Atenção! <a href="#" class="alert-link">Alerta com link!</a></div>
+      <div class="alert alert-info" role="alert">Atenção! <a href="#" class="alert-link">Alerta com link!</a></div>
+
+      <!-- alert-dismissible + fade + show: alerta com botão de fechar -->
+      <p class="bs-desc mt-3">
+        Adicione <code>.alert-dismissible</code> + <code>.fade</code> + <code>.show</code> para permitir fechar o alerta. O botão de fechar usa <code>data-dismiss="alert"</code>.
+      </p>
+      <div class="alert alert-dismissible fade show alert-primary" role="alert">
+      <!--
+        alert-dismissible → reserva espaço para o botão de fechar
+        fade              → transição de opacidade ao fechar
+        show              → garante que começa visível
+      -->
+        <button type="button" class="close" data-dismiss="alert" aria-label="Fechar">
+        <!--
+          close                → estiliza o botão de fechar (×)
+          data-dismiss="alert" → fecha o alerta ao clicar
+        -->
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Fechar</span>
+        </button>
+        <strong>Atenção!</strong> Agora você pode fechar esse alerta.
+      </div>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── BADGES ──────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Badges (Etiquetas)</h4>
+      <p class="bs-desc">
+        A classe <code>.badge</code> cria uma etiqueta compacta. Herda o tamanho de fonte do elemento pai automaticamente. Combine com <code>.badge-{cor}</code> para definir a cor.
+        <span class="variações">
+          <code>.badge-primary</code> · <code>.badge-secondary</code> · <code>.badge-success</code> · <code>.badge-danger</code> · <code>.badge-warning</code> · <code>.badge-info</code> · <code>.badge-light</code> · <code>.badge-dark</code><br>
+          Formato oval: <code>.badge-pill</code>
+        </span>
+      </p>
+
+      <p class="text-muted mb-1">Badge dentro de títulos (herda o tamanho da fonte):</p>
+      <!-- badge + badge-{cor}: etiqueta que herda o tamanho do pai -->
+      <h1>h1 <span class="badge badge-secondary">Novo</span></h1>
+      <h2>h2 <span class="badge badge-success">Novo</span></h2>
+      <h3>h3 <span class="badge badge-warning">Novo</span></h3>
+      <h4>h4 <span class="badge badge-dark">Novo</span></h4>
+      <h5>h5 <span class="badge badge-danger">Novo</span></h5>
+      <h6>h6 <span class="badge badge-info">Novo</span></h6>
+
+      <p class="text-muted mt-3 mb-1">Badges contextuais (<code>.badge-{cor}</code>):</p>
+      <div class="py-2">
+        <span class="badge mr-1 badge-primary">Primary</span>
+        <span class="badge mr-1 badge-secondary">Secondary</span>
+        <span class="badge mr-1 badge-success">Success</span>
+        <span class="badge mr-1 badge-danger">Danger</span>
+        <span class="badge mr-1 badge-warning">Warning</span>
+        <span class="badge mr-1 badge-info">Info</span>
+        <span class="badge mr-1 badge-light">Light</span>
+        <span class="badge mr-1 badge-dark">Dark</span>
+      </div>
+
+      <!-- badge-pill: formato oval arredondado -->
+      <p class="text-muted mt-3 mb-1">Badges formato pill (<code>.badge-pill</code>):</p>
+      <div class="py-2">
+        <span class="badge mr-1 badge-pill badge-primary">Primary</span>
+        <span class="badge mr-1 badge-pill badge-secondary">Secondary</span>
+        <span class="badge mr-1 badge-pill badge-success">Success</span>
+        <span class="badge mr-1 badge-pill badge-danger">Danger</span>
+        <span class="badge mr-1 badge-pill badge-warning">Warning</span>
+        <span class="badge mr-1 badge-pill badge-info">Info</span>
+        <span class="badge mr-1 badge-pill badge-light">Light</span>
+        <span class="badge mr-1 badge-pill badge-dark">Dark</span>
+        <!-- badge-pill: border-radius alto, formato oval/cápsula -->
+      </div>
+
+      <p class="text-muted mt-3 mb-1">Badge dentro de botão:</p>
+      <button type="button" class="btn btn-warning">
+        Alerta
+        <span class="badge ml-1 badge-light">Mensagens não lidas (29)</span>
+        <!-- ml-1: margin-left de 0.25rem para separar do texto -->
+      </button>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── SPINNERS ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Spinners</h4>
+      <p class="bs-desc">
+        A classe <code>.spinner-border</code> cria um círculo giratório animado. Use <code>.text-{cor}</code> para definir a cor.
+        <span class="variações">
+          Variações: <code>.spinner-grow</code> (cresce e some) · <code>.spinner-border-sm</code> · <code>.spinner-grow-sm</code><br>
+          Cores: <code>.text-primary</code> · <code>.text-success</code> · <code>.text-danger</code> · <code>.text-warning</code> · <code>.text-info</code> · <code>.text-muted</code> · <code>.text-dark</code>
+        </span>
+      </p>
+      <div class="d-flex py-2">
+      <!-- d-flex: display flex, alinha os spinners lado a lado -->
+        <div class="spinner-border mr-2 text-muted" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-primary" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-success" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-info" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-warning" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-danger" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-secondary" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border mr-2 text-dark" role="status"><span class="sr-only">Carregando...</span></div>
+        <div class="spinner-border text-light" role="status"><span class="sr-only">Carregando...</span></div>
+        <!--
+          spinner-border → círculo giratório com borda animada
+          text-{cor}     → define a cor do spinner
+          role="status"  → informa leitores de tela que é um indicador de carregamento
+          sr-only        → texto visível apenas para leitores de tela
+        -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── PROGRESS ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Barras de Progresso</h4>
+      <p class="bs-desc">
+        Use <code>.progress</code> como contêiner externo e <code>.progress-bar</code> como a barra interna. Defina a largura com <code>style="width: X%"</code>.
+        <span class="variações">
+          <code>.progress-bar-striped</code> → listras diagonais<br>
+          <code>.progress-bar-animated</code> → anima as listras (requer <code>.progress-bar-striped</code>)<br>
+          Cores: <code>.bg-success</code> · <code>.bg-info</code> · <code>.bg-warning</code> · <code>.bg-danger</code>
+        </span>
+      </p>
+      <div class="progress mb-2">
+      <!-- progress: contêiner cinza externo da barra -->
+        <div class="progress-bar" role="progressbar"
+          style="width: 15%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">15%</div>
+        <!-- progress-bar: barra interna colorida, largura definida por style -->
+      </div>
+      <div class="progress mb-2">
+        <div class="progress-bar bg-success" role="progressbar"
+          style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        <!-- bg-success: barra verde -->
+      </div>
+      <div class="progress mb-2">
+        <div class="progress-bar bg-info" role="progressbar"
+          style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">35%</div>
+        <!-- bg-info: barra ciano -->
+      </div>
+      <div class="progress mb-2">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"
+          style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+        <!--
+          progress-bar-striped  → adiciona listras diagonais
+          progress-bar-animated → anima as listras (requer striped)
+          bg-warning            → barra amarela
+        -->
+      </div>
+      <div class="progress mb-2">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar"
+          style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        <!-- bg-danger: barra vermelha -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 7: INTERAÇÃO
+       Botões, Dropdowns e Collapse permitem ações do usuário.
+  ============================================================ -->
+  <div class="categoria-titulo">🖱️ CATEGORIA 7: INTERAÇÃO <span>→ Botões, Dropdowns, Collapse</span></div>
+
+  <!-- ─── BOTÕES ───────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Botões</h4>
+      <p class="bs-desc">
+        A classe <code>.btn</code> é obrigatória em todos os botões Bootstrap. Combine com uma classe de cor para estilizar.
+        <span class="variações">
+          Sólidos: <code>.btn-primary</code> · <code>.btn-secondary</code> · <code>.btn-success</code> · <code>.btn-danger</code> · <code>.btn-warning</code> · <code>.btn-info</code> · <code>.btn-light</code> · <code>.btn-dark</code> · <code>.btn-link</code><br>
+          Contorno: <code>.btn-outline-primary</code> · <code>.btn-outline-success</code> · <code>.btn-outline-danger</code> etc.<br>
+          Tamanhos: <code>.btn-lg</code> · <code>.btn-sm</code> · <code>.btn-block</code> (largura total)
+        </span>
+      </p>
+
+      <p class="text-muted mb-1">Botões sólidos (<code>.btn .btn-{cor}</code>):</p>
+      <div class="d-flex flex-wrap py-2">
+      <!--
+        d-flex     → display flex, alinha em linha
+        flex-wrap  → quebra linha quando não cabe
+      -->
+        <div class="p-1"><button class="btn btn-primary">btn-primary</button></div>
+        <div class="p-1"><button class="btn btn-success">btn-success</button></div>
+        <div class="p-1"><button class="btn btn-danger">btn-danger</button></div>
+        <div class="p-1"><button class="btn btn-link text-dark">btn-link</button></div>
+        <!-- btn-link: botão sem fundo, aparência de link de texto -->
+        <div class="p-1"><button class="btn btn-warning">btn-warning</button></div>
+      </div>
+
+      <p class="text-muted mt-2 mb-1">Botões outline, tamanhos e block:</p>
+      <div class="d-flex flex-wrap align-items-center py-2">
+      <!-- align-items-center: alinha verticalmente ao centro no eixo Y -->
+        <div class="p-1">
+          <button class="btn btn-outline-success">btn-outline-success</button>
+          <!-- btn-outline-{cor}: transparente com borda e texto coloridos -->
+        </div>
+        <div class="p-1">
+          <button class="btn btn-lg btn-primary">btn-lg</button>
+          <!-- btn-lg: botão grande, mais padding e fonte maior -->
+        </div>
+        <div class="p-1">
+          <button class="btn btn-sm btn-danger">btn-sm</button>
+          <!-- btn-sm: botão pequeno, menos padding e fonte menor -->
+        </div>
+      </div>
+      <div class="mt-2">
+        <button class="btn btn-block btn-info">btn-block (largura total)</button>
+        <!-- btn-block: ocupa 100% da largura do contêiner pai -->
+      </div>
+
+      <!-- btn-group: botões unidos sem espaço -->
+      <p class="bs-desc mt-3">
+        Use <code>.btn-group</code> para unir botões sem espaço entre eles. Use <code>.btn-group-vertical</code> para empilhá-los.
+        <span class="variações">Tamanhos: <code>.btn-group-lg</code> · <code>.btn-group-sm</code></span>
+      </p>
+      <p class="text-muted mb-1">Grupo de botões (<code>.btn-group</code>):</p>
+      <div class="btn-group mb-3">
+      <!-- btn-group: une botões lado a lado sem espaço entre eles -->
+        <button type="button" class="btn btn-primary">Apple</button>
+        <button type="button" class="btn btn-success">Samsung</button>
+        <button type="button" class="btn btn-warning">Sony</button>
+      </div>
+
+      <p class="text-muted mb-1">Grupo horizontal (<code>.btn-group</code>):</p>
+      <div class="btn-group mb-3">
+        <button class="btn btn-primary">Um</button>
+        <button class="btn btn-success">Dois</button>
+        <button class="btn btn-info">Três</button>
+      </div>
+
+      <p class="text-muted mb-1">Grupo vertical (<code>.btn-group-vertical</code>):</p>
+      <div class="btn-group-vertical mb-3">
+      <!-- btn-group-vertical: empilha os botões verticalmente -->
+        <button class="btn btn-primary">Um</button>
+        <button class="btn btn-success">Dois</button>
+        <button class="btn btn-info">Três</button>
+      </div>
+
+      <p class="text-muted mb-1">Botão com ícone Font Awesome (<code>.fa .fa-{nome}</code>):</p>
+      <button class="btn py-2 px-3 btn-primary">
+      <!--
+        py-2 → padding vertical de 0.5rem
+        px-3 → padding horizontal de 1rem
+      -->
+        <i class="fa fa-user mr-1"></i> Botão com ícone de usuário
+        <!-- fa fa-user: ícone de usuário da biblioteca Font Awesome -->
+      </button>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── DROPDOWNS ────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Menus Suspensos (Dropdowns)</h4>
+      <p class="bs-desc">
+        Use <code>.dropdown</code> no contêiner, <code>.dropdown-toggle</code> no botão com <code>data-toggle="dropdown"</code>, e <code>.dropdown-menu</code> na lista de itens.
+        <span class="variações">
+          <code>.dropdown-item</code> → item clicável &nbsp;·&nbsp; <code>.dropdown-divider</code> → separador &nbsp;·&nbsp; <code>.dropdown-item.active</code> → destaca item<br>
+          Direção: <code>.dropup</code> · <code>.dropright</code> · <code>.dropleft</code> &nbsp;·&nbsp; Alinhamento: <code>.dropdown-menu-right</code>
+        </span>
+      </p>
+      <div class="dropdown mb-3">
+      <!-- dropdown: posiciona o menu suspenso em relação ao botão -->
+        <button type="button" class="btn dropdown-toggle btn-primary" data-toggle="dropdown">Botão de Menu</button>
+        <!--
+          dropdown-toggle        → adiciona a seta indicativa (▾)
+          data-toggle="dropdown" → ativa o submenu via JavaScript
+        -->
+        <div class="dropdown-menu">
+        <!-- dropdown-menu: lista de itens do menu (oculta por padrão) -->
+          <a href="#" class="dropdown-item">Link 1</a>
+          <!-- dropdown-item: item clicável dentro do menu -->
+          <a href="#" class="dropdown-item">Link 2</a>
+          <a href="#" class="dropdown-item">Link 3</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle btn-primary" data-toggle="dropdown">Menu do tipo Dropdown</button>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">Item um</a>
+          <a href="#" class="dropdown-item">Item dois</a>
+          <a href="#" class="dropdown-item">Item três</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divisor">
+
+  <!-- ─── COLLAPSE ─────────────────────────────────────────────── -->
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Conteúdo Recolhível (Collapse)</h4>
+      <p class="bs-desc">
+        A classe <code>.collapse</code> oculta um elemento. Use <code>data-toggle="collapse"</code> e <code>data-target="#id"</code> no botão para alternar a visibilidade.
+        <span class="variações">Variação: <code>.collapse.show</code> → começa visível</span>
+      </p>
+      <button type="button" class="btn mb-2 btn-primary" data-toggle="collapse" data-target="#demo">
+      <!--
+        data-toggle="collapse" → ativa o comportamento de recolher via JS
+        data-target="#demo"    → aponta para o elemento a mostrar/ocultar
+      -->
+        Mostrar / Ocultar conteúdo
+      </button>
+      <div id="demo" class="collapse">
+      <!-- collapse: elemento começa oculto, exibe com animação ao ativar -->
+        <div class="card card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+
+      <p class="bs-desc mt-3">
+        O <code>.collapse</code> também pode ser usado fora da navbar, controlando conteúdo externo com <code>data-target</code>.
+      </p>
+    </div>
+    <div class="pos-f-t mt-2">
+    <!-- pos-f-t: position fixed no topo da tela -->
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="p-4 bg-dark">
+        <!-- p-4: padding de 1.5rem | bg-dark: fundo escuro -->
+          <h5 class="h4 text-white">Exemplo</h5>
+          <!-- h4: utilitário de tamanho de fonte equivalente ao heading h4 -->
+          <span class="text-muted">Texto escondido</span>
+          <!-- text-muted: texto cinza apagado -->
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarToggleExternalContent"
+          aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CATEGORIA 8: ANIMAÇÃO
+       Animate.css adiciona animações prontas a qualquer elemento.
+  ============================================================ -->
+  <div class="categoria-titulo">✨ CATEGORIA 8: ANIMAÇÃO <span>→ Animate.css</span></div>
+
+  <section class="p-2">
+    <div class="container">
+      <h4 class="mt-3">Efeitos com Animate CSS</h4>
+      <p class="bs-desc">
+        A classe <code>.animate__animated</code> é obrigatória e deve sempre ser combinada com uma classe de efeito.
+        <span class="variações">
+          <code>.animate__flash</code> → pisca &nbsp;·&nbsp; <code>.animate__fadeInDown</code> → entra de cima &nbsp;·&nbsp; <code>.animate__tada</code> → chacoalha &nbsp;·&nbsp; <code>.animate__bounce</code> → quica<br>
+          <code>.animate__rubberBand</code> → elástico &nbsp;·&nbsp; <code>.animate__shakeX</code> → sacode horizontal &nbsp;·&nbsp; <code>.animate__swing</code> → balança<br>
+          Outros: <code>.animate__zoomIn</code> · <code>.animate__slideInLeft</code> · <code>.animate__heartBeat</code> · <code>.animate__pulse</code> · <code>.animate__wobble</code>
+        </span>
+      </p>
+      <div class="d-flex flex-wrap justify-content-center">
+      <!-- justify-content-center: centraliza os cards horizontalmente -->
+        <div class="card m-1 p-2 text-center animate__animated animate__flash">animate__flash</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__fadeInDown">animate__fadeInDown</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__tada">animate__tada</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__bounce">animate__bounce</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__rubberBand">animate__rubberBand</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__shakeX">animate__shakeX</div>
+        <div class="card m-1 p-2 text-center animate__animated animate__swing">animate__swing</div>
+        <!--
+          animate__animated → classe base obrigatória da Animate.css
+          animate__{efeito} → define o tipo de animação
+          m-1               → margin de 0.25rem em todos os lados
+        -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- JavaScript: jQuery e Bootstrap Bundle (inclui Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
